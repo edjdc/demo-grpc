@@ -1,0 +1,11 @@
+---
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:offline-repository/
+  profiles:
+    active: native
+server:
+  port: 9090

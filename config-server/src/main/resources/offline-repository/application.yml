@@ -1,0 +1,21 @@
+---
+# Items that apply to ALL profiles:
+grpc:
+  port: 6565
+
+eureka:
+  instance:
+    nonSecurePort: ${grpc.port}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:9091}/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  
+  endpoint:
+    health:
+      show-details: ALWAYS
+ 
